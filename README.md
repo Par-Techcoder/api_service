@@ -21,7 +21,7 @@
 
 # Make migrations:
 
-=> python manage.py makemigrations qcome
+=> python manage.py makemigrations api_v1
 
     => python manage.py migrate
 
