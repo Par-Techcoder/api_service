@@ -8,10 +8,12 @@ class UserAdmin(DefaultUserAdmin):
     model = User
     list_display = (
         'id', 'email', 'first_name', 'middle_name', 'last_name',
-        'profile_photo_url', 'gender', 'dob', 'address',
+        'profile_photo_url', 'gender', 'dob', 'address', 'date_joined',
         'is_active', 'is_staff', 'is_superuser'
     )
     search_fields = ('email', 'first_name', 'last_name')
+    list_filter = ('is_active', 'is_staff', 'gender')
+    readonly_fields = ('date_joined', 'last_login')
     ordering = ('-date_joined',)
 
     # Customize the fieldsets shown in admin for view/edit user
