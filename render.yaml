@@ -6,9 +6,10 @@ services:
     region: oregon
     buildCommand: |
       pip install -r requirements.txt
-      python manage.py migrate
       python manage.py collectstatic --noinput
-    startCommand: gunicorn api_service.wsgi:application
+    startCommand: |
+      python manage.py migrate &&
+      gunicorn api_service.wsgi:application
     envVars:
       - key: DEBUG
         value: "False"
