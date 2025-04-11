@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 from env_config import env
 import dj_database_url
+import os
+import environ  # if you're using django-environ
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
