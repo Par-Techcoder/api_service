@@ -28,10 +28,6 @@ Thumbs.db
 __pycache__/
 __pycache__/
 
-# Ignore migration files
-api_v1/migrations/*.py
-!api_v1/migrations/__init__.py
-
 # VSCode
 .vscode/
 
