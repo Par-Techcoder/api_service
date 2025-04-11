@@ -3,6 +3,7 @@ venv/
 env/
 .venv/
 .env/
+.env
 
 # Python cache and bytecode
 qcome/__pycache__/
