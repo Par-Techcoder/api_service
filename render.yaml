@@ -3,7 +3,7 @@ services:
     name: api-service
     env: python
     plan: free
-    region: oregon  # or frankfurt for EU
+    region: oregon
     buildCommand: |
       pip install -r requirements.txt
       python manage.py migrate
