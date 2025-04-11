@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from ..constants import Gender
+from ..manager import CustomUserManager
 
 class User(AbstractUser):
     first_name = models.CharField(max_length=50)
@@ -25,15 +26,15 @@ class User(AbstractUser):
 
 
     # fields required for abstract user
-    groups = None
-    user_permissions = None
     username = models.CharField(max_length=128, blank=True, null=True)    
-    is_staff = models.BooleanField(db_default=False, blank=True)  # To allow admin access
-    is_superuser = models.BooleanField(db_default=False, blank=True)  # Superuser status
+    is_staff = models.BooleanField(default=False, blank=True)  # To allow admin access
+    is_superuser = models.BooleanField(default=False, blank=True)  # Superuser status
     
     # Use email as the username field.
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['first_name', 'last_name']
+
+    objects = CustomUserManager()
 
     class Meta:
         db_table = 'users'
